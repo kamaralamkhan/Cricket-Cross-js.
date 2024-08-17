@@ -18,3 +18,5 @@ function calculateResult() {
         document.querySelector('#display').value = 'Error';
     }
 }
+
+
