@@ -1,108 +1,55 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Set a full-screen background with centered content */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: #e0e0e0;
-    font-family: 'Arial', sans-serif;
+    background-color: #e0e0e0; /* Soft background color */
 }
 
-#calculator-container {
+/* Style the main container */
+.images {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
+/* Style the heading */
 h1 {
-    font-size: 32px;
+    font-size: 2em;
     color: #333;
     margin-bottom: 20px;
 }
 
-#calculator {
-    background-color: #222;
-    border-radius: 15px;
-    padding: 20px;
-    width: 320px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-}
-
-#display {
-    width: 100%;
-    height: 70px;
-    border: none;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 32px;
-    color: white;
-    background-color: #333;
-    text-align: right;
-    box-sizing: border-box;
-}
-
-.button-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.button {
-    height: 60px;
-    border: none;
-    border-radius: 10px;
-    font-size: 24px;
+/* Style the images */
+.images img {
+    height: 150px;
     cursor: pointer;
-    background-color: #444;
-    color: white;
-    transition: background-color 0.3s, transform 0.1s;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.button:hover {
-    background-color: #555;
+.images img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius:20px ;
 }
 
-.button:active {
-    background-color: #666;
-    transform: scale(0.95);
-}
-
-.button-clear {
-    background-color: #ff3b30;
-}
-
-.button-clear:hover {
-    background-color: #e03228;
-}
-
-.button-clear:active {
-    background-color: #c02a22;
-}
-
-.button-equal {
-    background-color: #007aff;
-    grid-column: span 2;
-}
-
-.button-equal:hover {
-    background-color: #0064e0;
-}
-
-.button-equal:active {
-    background-color: #0053c1;
-}
-
-.button-operator {
-    background-color: #ff9500;
-}
-
-.button-operator:hover {
-    background-color: #e08c00;
-}
-
-.button-operator:active {
-    background-color: #cc7b00;
-}
-
-.button-zero {
-    grid-column: span 2;
+/* Style the result text */
+#result {
+    display: block;
+    margin-top: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+    color: #333;
 }

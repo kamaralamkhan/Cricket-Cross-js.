@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cricket-Cross</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="images">
+        <h1>Cricket-Cross</h1>
+        <img src="./Cricket_Game/assets/bat.jpg" onclick="bat()" id="bat" alt="Bat" />
+        <img src="./Cricket_Game/assets/ball.jpg" onclick="ball()" id="ball" alt="Ball" />
+        <img src="./Cricket_Game/assets/wicket.jpg" onclick="wicket()" id="wicket" alt="Wicket" />
+        <span id="result">Result: </span>
+    </div>
+
+    <script>
+        function updateResult(message) {
+            document.getElementById("result").innerText = "Result: " + message;
+        }
+
+        function bat() {
+            let computerChoice = getComputerChoice();
+            if (computerChoice === "ball") {
+                updateResult("You win");
+            } else {
+                updateResult("You lost");
+            }
+        }
+
+        function ball() {
+            let computerChoice = getComputerChoice();
+            if (computerChoice === "bat") {
+                updateResult("Computer wins");
+            } else {
+                updateResult("You win");
+            }
+        }
+
+        function wicket() {
+            let computerChoice = getComputerChoice();
+            if (computerChoice === "bat") {
+                updateResult("Computer wins");
+            } else if (computerChoice === "wicket") {
+                updateResult("It's a tie");
+            } else {
+                updateResult("You win");
+            }
+        }
+
+        function getComputerChoice() {
+            const randomNumber = Math.random() * 3;
+            if (randomNumber <= 1) {
+                return "bat";
+            } else if (randomNumber <= 2) {
+                return "ball";
+            } else {
+                return "wicket";
+            }
+        }
+    </script>
+</body>
+</html>
